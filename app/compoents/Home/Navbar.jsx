@@ -1,446 +1,118 @@
 "use client";
 
-import Image from "next/image";
-import { useEffect, useState } from "react";
-import { FiMenu, FiX, FiChevronDown } from "react-icons/fi";
-import { GrCatalog } from "react-icons/gr";
-
-const navItems = [
-  {
-    name: "Home",
-    href: "/",
-  },
-  {
-    name: "Shop",
-    href: "/shop",
-    hot: true,
-    dropdown: true,
-  },
-  {
-    name: "Featured",
-    href: "/featured",
-  },
-  {
-    name: "Collections",
-    href: "/collections",
-    dropdown: true,
-  },
-  {
-    name: "Blogs",
-    href: "/blogs",
-  },
-];
-
-const shopCategories = [
-  "Ceiling Lights",
-  "Pendant Lights",
-  "Wall Lights",
-  "Table Lamps",
-  "Floor Lamps",
-  "LED Collection",
-];
+import { useState } from "react";
 
 export default function Navbar() {
-  const [mobileOpen, setMobileOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 60);
-    };
-
-    handleScroll();
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  const navItems = [
+    {
+      name: "Home",
+      link: "#home",
+    },
+    {
+      name: "About Us",
+      link: "#about",
+    },
+    {
+      name: "Products",
+      link: "#products",
+    },
+    {
+      name: "Contact Us",
+      link: "#contact",
+    },
+  ];
 
   return (
-    <header
-      className={`
-        fixed
-        top-0
-        left-0
-        z-50
-        w-full
-        transition-all
-        duration-500
-        ease-in-out
+    <nav className="fixed top-0 left-0 z-50 w-full bg-white shadow-md">
+      <div className="mx-auto flex  w-full md:max-w-7xl items-center justify-between px-6 py-4">
 
-        ${
-          scrolled
-            ? "bg-white shadow-[0_4px_25px_rgba(0,0,0,0.06)]"
-            : "bg-transparent"
-        }
-      `}
-    >
-      <nav className="mx-auto max-w-[1500px] px-5 sm:px-8 lg:px-10">
-        {/* =================================================
-            MAIN NAV
-        ================================================= */}
-        <div
-          className="
-            relative
-            flex
-            h-[82px]
-            items-center
-            justify-between
-            md:h-[94px]
-          "
+        {/* Logo */}
+        <a
+          href="#home"
+          className="text-2xl font-bold text-black"
         >
-          {/* =================================================
-              LEFT - LOGO
-          ================================================= */}
-          <a href="/" className="relative z-10 flex shrink-0 items-center">
-            <Image
-              src="/logo.jpeg"
-              alt="elstrong"
-              width={100}
-              height={100}
-              className={`
-                h-auto
-                w-[75px]
-               
-                md::w-[100px]
-                transition-all
-                object-contain
-                duration-500
-               
-              `}
-            />
-          </a>
+          Logo
+        </a>
 
-          {/* =================================================
-              DESKTOP NAV
-          ================================================= */}
-          <div
-            className="
-              hidden
-              items-center
-              gap-8
-              lg:flex
-              xl:gap-11
-            "
-          >
-            {navItems.map((item) => (
-              <div key={item.name} className="group relative">
-                {/* ================= HOT BADGE ================= */}
-                {item.hot && (
-                  <span
-                    className="
-                      absolute
-                      -top-[25px]
-                      left-1/2
-                      -translate-x-1/2
-                      rounded-sm
-                      bg-[#e84b23]
-                      px-2
-                      py-1
-                      text-[10px]
-                      font-bold
-                      text-white
-                    "
-                  >
-                    HOT
-                    <span
-                      className="
-                        absolute
-                        left-1/2
-                        top-full
-                        -translate-x-1/2
-                        border-l-[5px]
-                        border-r-[5px]
-                        border-t-[5px]
-                        border-l-transparent
-                        border-r-transparent
-                        border-t-[#e84b23]
-                      "
-                    />
-                  </span>
-                )}
-
-                {/* ================= NAV LINK ================= */}
-                <a
-                  href={item.href}
-                  className={`
-                    flex
-                    items-center
-                    gap-1.5
-                    text-[16px]
-                    font-semibold
-                    transition-all
-                    duration-300
-                    xl:text-[17px]
-
-                    ${
-                      scrolled
-                        ? "text-neutral-800 hover:text-[#b28b32]"
-                        : "text-white hover:text-[#e4c56e]"
-                    }
-                  `}
-                >
-                  {item.name}
-
-                  {item.dropdown && (
-                    <FiChevronDown
-                      size={15}
-                      className="
-                        transition-transform
-                        duration-300
-                        group-hover:rotate-180
-                      "
-                    />
-                  )}
-                </a>
-
-                {/* ================= HOVER LINE ================= */}
-                <span
-                  className={`
-                    absolute
-                    -bottom-2
-                    left-0
-                    h-[2px]
-                    w-0
-                    bg-[#c9a44c]
-                    transition-all
-                    duration-300
-                    group-hover:w-full
-                  `}
-                />
-
-                {/* =================================================
-                    DROPDOWN
-                ================================================= */}
-                {item.dropdown && (
-                  <div
-                    className="
-                      invisible
-                      absolute
-                      left-1/2
-                      top-full
-                      -translate-x-1/2
-                      pt-7
-                      opacity-0
-                      transition-all
-                      duration-300
-                      group-hover:visible
-                      group-hover:opacity-100
-                    "
-                  >
-                    <div
-                      className="
-                        w-60
-                        rounded-xl
-                        border
-                        border-neutral-100
-                        bg-white
-                        p-3
-                        shadow-[0_20px_60px_rgba(0,0,0,0.12)]
-                      "
-                    >
-                      {shopCategories.map((category) => (
-                        <a
-                          href="#"
-                          key={category}
-                          className="
-                            flex
-                            items-center
-                            justify-between
-                            rounded-lg
-                            px-4
-                            py-3
-                            text-sm
-                            font-medium
-                            text-neutral-700
-                            transition-colors
-                            hover:bg-[#faf7ef]
-                            hover:text-[#b28b32]
-                          "
-                        >
-                          {category}
-
-                          <span className="text-neutral-300">→</span>
-                        </a>
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-
-          {/* =================================================
-              RIGHT - CATALOGUE
-          ================================================= */}
-          <div className="hidden lg:flex">
-            <button
-              className={`
-                group
-                flex
-                items-center
-                gap-2
-                border
-                px-4
-                py-2.5
-                text-[14px]
-                font-semibold
-                transition-all
-                duration-300
-
-                ${
-                  scrolled
-                    ? `
-                      border-[#b28b32]
-                      text-neutral-800
-                      hover:bg-[#b28b32]
-                      hover:text-white
-                    `
-                    : `
-                      border-white/60
-                      text-white
-                      hover:border-white
-                      hover:bg-white
-                      hover:text-neutral-900
-                    `
-                }
-              `}
+        {/* Desktop Menu */}
+        <div className="hidden items-center md:gap-8 md:flex">
+          {navItems.map((item) => (
+            <a
+              key={item.name}
+              href={item.link}
+              className="text-gray-700 transition hover:text-blue-600"
             >
-              Get Catalogue
-              <GrCatalog
-                size={17}
-                className="
-                  transition-transform
-                  duration-300
-                  group-hover:scale-110
-                "
-              />
-            </button>
-          </div>
-
-          {/* =================================================
-              MOBILE MENU BUTTON
-          ================================================= */}
-          <button
-            onClick={() => setMobileOpen(!mobileOpen)}
-            aria-label="Toggle menu"
-            className={`
-              flex
-              h-11
-              w-11
-              items-center
-              justify-center
-              rounded-full
-              border
-              transition-all
-              duration-300
-              lg:hidden
-
-              ${
-                scrolled
-                  ? `
-                    border-neutral-200
-                    text-neutral-900
-                    hover:bg-neutral-100
-                  `
-                  : `
-                    border-white/40
-                    text-white
-                    hover:bg-white/10
-                  `
-              }
-            `}
-          >
-            {mobileOpen ? <FiX size={24} /> : <FiMenu size={25} />}
-          </button>
+              {item.name}
+            </a>
+          ))}
         </div>
 
-        {/* =================================================
-            MOBILE NAV
-        ================================================= */}
-        {mobileOpen && (
-          <div
-            className="
-              border-t
-              border-neutral-100
-              bg-white
-              py-5
-              lg:hidden
-            "
+        {/* Desktop Buttons */}
+        <div className="hidden items-center gap-3 md:flex">
+          <button className="rounded-lg border border-gray-300 px-5 py-2 text-gray-700 transition hover:bg-gray-100">
+            Login
+          </button>
+
+          <a
+            href="#contact"
+            className="rounded-lg bg-blue-600 px-5 py-2 text-white transition hover:bg-blue-700"
           >
+            Get a Quote
+          </a>
+        </div>
+
+        {/* Mobile Button */}
+        <button
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          className="flex h-10 w-10 items-center justify-center rounded-lg border border-gray-300 md:hidden"
+          aria-label="Toggle Menu"
+        >
+          {isMobileMenuOpen ? (
+            <span className="text-2xl">×</span>
+          ) : (
+            <span className="text-2xl">☰</span>
+          )}
+        </button>
+      </div>
+
+      {/* Mobile Menu */}
+      {isMobileMenuOpen && (
+        <div className="border-t border-gray-200 bg-white px-6 py-5 md:hidden">
+          <div className="flex flex-col gap-5">
+
             {navItems.map((item) => (
               <a
                 key={item.name}
-                href={item.href}
-                onClick={() => setMobileOpen(false)}
-                className="
-                  flex
-                  items-center
-                  justify-between
-                  border-b
-                  border-neutral-100
-                  py-4
-                  text-[16px]
-                  font-semibold
-                  text-neutral-800
-                  transition-colors
-                  hover:text-[#b28b32]
-                "
+                href={item.link}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-gray-700 transition hover:text-blue-600"
               >
-                <span className="flex items-center gap-3">
-                  {item.name}
-
-                  {item.hot && (
-                    <span
-                      className="
-                        rounded-sm
-                        bg-[#e84b23]
-                        px-2
-                        py-1
-                        text-[9px]
-                        font-bold
-                        text-white
-                      "
-                    >
-                      HOT
-                    </span>
-                  )}
-                </span>
-
-                {item.dropdown && <FiChevronDown size={18} />}
+                {item.name}
               </a>
             ))}
 
-            {/* ================= MOBILE CATALOGUE ================= */}
-            <button
-              className="
-                mt-5
-                flex
-                h-12
-                w-full
-                items-center
-                justify-center
-                gap-2
-                border
-                border-[#b28b32]
-                text-sm
-                font-semibold
-                text-neutral-800
-                transition-all
-                duration-300
-                hover:bg-[#b28b32]
-                hover:text-white
-              "
-            >
-              <GrCatalog size={18} />
-              Get Catalogue
-            </button>
+            <div className="mt-2 flex flex-col gap-3">
+              <button
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="w-full rounded-lg border border-gray-300 px-5 py-2 text-gray-700"
+              >
+                Login
+              </button>
+
+              <a
+                href="#contact"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="w-full rounded-lg bg-blue-600 px-5 py-2 text-center text-white"
+              >
+                Get a Quote
+              </a>
+            </div>
+
           </div>
-        )}
-      </nav>
-    </header>
+        </div>
+      )}
+    </nav>
   );
 }

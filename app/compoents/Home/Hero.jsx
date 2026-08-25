@@ -1,39 +1,44 @@
-import React from "react";
+"use client";
 
-export default function Hero() {
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/pagination";
+
+const slides = [
+  {
+    image: "/social.webp",
+  },
+  {
+    image: "/website.webp",
+  },
+];
+
+export default function HeroSlider() {
   return (
-    <>
-      <section className="relative flex min-h-[600px] h-[707px] w-full items-center justify-center">
-        {/* Background */}
-        <div className="absolute inset-0 h-full w-full">
-          <div
-            className="h-full w-full bg-cover bg-center"
-            style={{
-              backgroundImage:
-                "url('/banner.jpg')",
-            }}
-            aria-label="Luxury minimalist living room"
-          />
-
-          {/* Overlay */}
-          <div className="absolute inset-0 bg-black/25" />
-        </div>
-
-        {/* Hero Content */}
-        <div className="relative z-10 flex flex-col items-center px-4 text-center">
-          <span className="mb-4 text-sm font-medium uppercase tracking-[0.25em] text-white">
-           Discover the Collection
-          </span>
-
-          <h1 className="mb-8 max-w-4xl text-4xl  font-semibold leading-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
-           Elevate your interiors with <br /> lighting made to inspire.
-          </h1>
-
-          <button className="bg-black px-8 py-4 text-sm font-medium uppercase tracking-widest text-white transition-colors duration-300 hover:bg-white hover:text-black">
-            Shop Now
-          </button>
-        </div>
-      </section>
-    </>
+    <Swiper
+      modules={[Autoplay, Pagination]}
+      slidesPerView={1}
+      loop={true}
+      autoplay={{
+        delay: 2000,
+        disableOnInteraction: false,
+      }}
+      pagination={{ clickable: true }}
+      className="w-full"
+    >
+      {slides.map((slide, index) => (
+        <SwiperSlide key={index}>
+          <div className="w-full">
+            <img
+              src={slide.image}
+              alt={`Slide ${index + 1}`}
+              className="w-full h-auto block"
+            />
+          </div>
+        </SwiperSlide>
+      ))}
+    </Swiper>
   );
 }

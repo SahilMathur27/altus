@@ -31,14 +31,14 @@ const faqs = [
   },
 ];
 
-export default function Faq() {
+ export default function Faq() {
   const [openIndex, setOpenIndex] = useState(0);
 
-  const toggleFAQ = (index) => {
-    setOpenIndex((current) =>
-      current === index ? null : index
-    );
-  };
+   const toggleFAQ = (index) => {
+     setOpenIndex((current) =>
+       current === index ? null : index
+     );
+   };
 
   return (
     <section className="w-full bg-white py-16 md:py-24">

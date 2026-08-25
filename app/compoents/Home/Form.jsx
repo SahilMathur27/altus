@@ -28,6 +28,7 @@ export default function Form() {
   };
 
   return (
+    
     <section
       className="bg-white py-6 md:py-16"
       data-purpose="requirements-section"
