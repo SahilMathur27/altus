@@ -12,6 +12,7 @@ export default function ProductsPage() {
      <div className="w-full h-[200px] bg-blue-950 flex justify-center items-end pb-6">
      <h1 className="text-6xl text-white text-center ">All Products</h1>
    </div>
+   
     
     <div className="max-w-7xl mx-auto px-5 py-16">
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
