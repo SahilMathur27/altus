@@ -13,6 +13,7 @@ import Map from './compoents/Home/Map'
 import ScrollExpand from './compoents/Home/ScrollExpand'
 import Testimonial from './compoents/Testimonial'
 import Popup from './compoents/Home/Popup'
+import ScrollStack from './compoents/Home/ScrollStack'
 
 
 
@@ -23,6 +24,7 @@ export default function page() {
       <Hero />
       <About />
       <Grid />
+      <ScrollStack/>
       <Collections />
       <ScrollExpand
         src="/64988.jpg"
