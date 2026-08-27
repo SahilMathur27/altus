@@ -19,7 +19,7 @@ export default function Navbar() {
     },
     {
       name: "Products",
-      link: "#products",
+      link: "/products",
     },
      {
       name: "Blogs",
