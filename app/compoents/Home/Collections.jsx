@@ -45,14 +45,14 @@ const MIDDLE_START = TOTAL;
 
 export default function Collections() {
  return  <> 
- <div className=" w-full relative min-h-[300px] bg-cover bg-center my-4"
+ <div className=" w-full relative  min-h-[300px] bg-cover bg-center my-4"
   style={{ backgroundImage: "url('/167088.webp')" }}
 >
   {/* Black Overlay */}
   <div className="absolute inset-0 bg-black/80 w-full"></div>
 
   {/* Text */}
-  <div className="relative z-10 flex min-h-[300px] items-center justify-start text-center">
+  <div className="relative z-10 flex min-h-[300px] items-center justify-center text-center">
     <div>
       <h1 className="text-5xl font-bold text-white text-center">
         Ready to Grow Your Business Online?

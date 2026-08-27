@@ -24,15 +24,15 @@ export default function page() {
       <Hero />
       <About />
       <Grid />
-      <ScrollStack/>
       <Collections />
+      <ScrollStack/>
+      
       <ScrollExpand
-        src="/64988.jpg"
+        src="steptodown.com903114.jpg"
         title="Built to scale"
         scrollHint="Scroll inside the frame"
         useWindowScroll>
-        <h2 className='text-6xl text-black'>Every pixel, everywhere</h2>
-        <p className='text-[16px] text-black'>The frame opens up as you scroll and hands the whole stage to your media.</p>
+        <h2 className='text-6xl text-white'>Every pixel, everywhere</h2>
       </ScrollExpand>
       <Testimonial/>
       <Map/>
