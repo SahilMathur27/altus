@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { products } from "../../Data/products";
 import { notFound } from "next/navigation";
+import Navbar from "@/app/compoents/Home/Navbar";
+import Footer from "@/app/compoents/Home/Footer";
 
 export default async function ProductDetails({ params }) {
   const { slug } = await params;
@@ -14,6 +16,8 @@ export default async function ProductDetails({ params }) {
   }
 
   return (
+    <>
+    <Navbar/>
     <div className="max-w-6xl mx-auto px-5 py-16">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
 
@@ -47,5 +51,7 @@ export default async function ProductDetails({ params }) {
 
       </div>
     </div>
+    <Footer/>
+    </>
   );
 }
