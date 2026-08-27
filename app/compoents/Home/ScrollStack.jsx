@@ -39,10 +39,10 @@ function Card({ card, index, progress }) {
         scale,
         top: `${index * 30}px`,
       }}
-      className="sticky h-[350px] rounded-3xl border border-gray-200 bg-white p-10 shadow-xl"
+      className="sticky h-[300px] rounded-3xl border border-gray-200 bg-white p-10 shadow-xl"
     >
       <div className="flex h-full flex-col justify-center">
-        <span className="mb-4 text-sm font-semibold text-blue-600">
+        <span className="mb-4 text-2xl font-semibold text-blue-600">
           0{index + 1}
         </span>
 
