@@ -17,260 +17,10 @@ export default function Footer() {
   return (
     <footer className="relative overflow-hidden bg-[#151515] text-white">
 
-      {/* ================= DECORATIVE GLOW ================= */}
-      <div
-        className="
-          pointer-events-none
-          absolute
-          -right-40
-          top-0
-          h-[500px]
-          w-[500px]
-          rounded-full
-          bg-[#c9a44c]/10
-          blur-[120px]
-        "
-      />
+    <div className=" w-7xl flex flex-col md:flex-row mx-auto justify-between gap-10 py-5">
 
-      <div
-        className="
-          pointer-events-none
-          absolute
-          -left-40
-          bottom-0
-          h-[400px]
-          w-[400px]
-          rounded-full
-          bg-[#c9a44c]/5
-          blur-[100px]
-        "
-      />
-
-      <div className="relative mx-auto max-w-[1500px] px-5 sm:px-8 lg:px-10">
-
-        {/* =================================================
-            NEWSLETTER / TOP SECTION
-        ================================================= */}
-        <div
-          className="
-            flex
-            flex-col
-            gap-8
-            border-b
-            border-white/10
-            py-14
-            sm:py-16
-            lg:flex-row
-            lg:items-end
-            lg:justify-between
-            lg:py-20
-          "
-        >
-
-         <div className="max-w-2xl">
-
-  {/* Tubelight fixture */}
-  <div className="relative mb-10 flex justify-start">
-
-    {/* Light cone spilling downward onto the content below */}
-    <div
-      className="
-        pointer-events-none
-        absolute
-        left-0
-        top-3
-        -z-10
-        h-40
-        w-64
-        opacity-70
-      "
-      style={{
-        background:
-          "conic-gradient(from 180deg at 10% 0%, transparent 0deg, rgba(210,180,92,0.35) 20deg, rgba(210,180,92,0.12) 45deg, transparent 70deg)",
-        filter: "blur(6px)",
-      }}
-    />
-
-    {/* The tube itself */}
-    <div className="relative flex items-center gap-3">
-
-      {/* glass tube */}
-      <div
-        className="
-          relative
-          h-[6px]
-          w-16
-          overflow-hidden
-          rounded-full
-          sm:w-20
-        "
-        style={{
-          background:
-            "linear-gradient(90deg, rgba(255,247,220,0.2) 0%, #fff7dc 45%, #ffe9a8 55%, rgba(255,247,220,0.2) 100%)",
-          boxShadow:
-            "0 0 6px 2px rgba(255,232,168,0.9), 0 0 18px 6px rgba(210,180,92,0.6), 0 0 40px 14px rgba(210,180,92,0.25)",
-        }}
-      >
-        {/* filament flicker */}
-        <div
-          className="absolute inset-0 animate-pulse"
-          style={{
-            background:
-              "linear-gradient(90deg, transparent, rgba(255,255,255,0.8), transparent)",
-            mixBlendMode: "overlay",
-          }}
-        />
-      </div>
-
-      {/* end caps */}
-      <span className="h-2 w-2 rounded-full bg-[#d2b45c]/60 blur-[1px]" />
-    </div>
-
-    {/* Label, lit by its own fixture */}
-    <p
-      className="
-        absolute
-        left-0
-        top-4
-        mb-4
-        whitespace-nowrap
-        text-[10px]
-        font-semibold
-        uppercase
-        tracking-[0.28em]
-        text-[#f4dfa0]
-        sm:text-xs
-      "
-      style={{
-        textShadow:
-          "0 0 8px rgba(244,223,160,0.9), 0 0 20px rgba(210,180,92,0.5)",
-      }}
-    >
-      Stay Inspired
-    </p>
-  </div>
-
-  <h2
-    className="
-      relative
-      text-3xl
-      font-semibold
-      leading-tight
-      tracking-[-0.03em]
-      sm:text-4xl
-      lg:text-5xl
-    "
-  >
-    Illuminate your world
-    <br className="hidden sm:block" />
-    <span className="text-[#c9a44c]">
-      with better light.
-    </span>
-  </h2>
-
-  <p className="
-    mt-4
-    max-w-lg
-    text-sm
-    leading-6
-    text-white/50
-  ">
-    Explore premium LED lighting solutions designed
-    for modern homes, commercial spaces and
-    architectural environments.
-  </p>
-
-</div>
-
-
-          {/* Newsletter */}
-          <div className="w-full max-w-md">
-
-            <p className="
-              mb-3
-              text-xs
-              uppercase
-              tracking-[0.15em]
-              text-white/40
-            ">
-              Join our newsletter
-            </p>
-
-            <form className="
-              flex
-              border
-              border-white/15
-              bg-white/[0.03]
-              p-1
-              focus-within:border-[#c9a44c]/60
-            ">
-
-              <input
-                type="email"
-                placeholder="Enter your email address"
-                className="
-                  min-w-0
-                  flex-1
-                  bg-transparent
-                  px-4
-                  py-3
-                  text-sm
-                  text-white
-                  outline-none
-                  placeholder:text-white/30
-                "
-              />
-
-              <button
-                type="submit"
-                className="
-                  flex
-                  shrink-0
-                  items-center
-                  gap-2
-                  bg-[#c9a44c]
-                  px-4
-                  text-xs
-                  font-semibold
-                  uppercase
-                  tracking-wider
-                  text-black
-                  transition-all
-                  hover:bg-[#dfc16a]
-                  sm:px-5
-                "
-              >
-                Subscribe
-                <FiArrowRight size={15} />
-              </button>
-
-            </form>
-
-          </div>
-
-        </div>
-
-
-        {/* =================================================
-            MAIN FOOTER GRID
-        ================================================= */}
-        <div
-          className="
-            grid
-            grid-cols-1
-            gap-12
-            py-14
-            sm:grid-cols-2
-            lg:grid-cols-[1.5fr_1fr_1fr_1fr]
-            lg:gap-10
-            lg:py-16
-          "
-        >
-
-          {/* =================================================
-              BRAND
-          ================================================= */}
-          <div>
+     
+          <div >
 
             <a
               href="/"
@@ -282,7 +32,7 @@ export default function Footer() {
                 text-white
               "
             >
-              ELSTRONG
+              Digital marketing 
               <span className="text-[#c9a44c]">.</span>
             </a>
 
@@ -293,9 +43,8 @@ export default function Footer() {
               leading-7
               text-white/45
             ">
-              Premium LED lighting solutions created to bring
-              performance, precision and timeless design to
-              every space.
+              Grow Your Brand. Reach More Customers.
+Turn Your Digital Presence Into Real Business Growth.
             </p>
 
 
@@ -470,7 +219,7 @@ export default function Footer() {
 
             <h3 className="
               mb-6
-              text-[10px]
+              text-[15px]
               font-semibold
               uppercase
               tracking-[0.2em]
@@ -531,7 +280,7 @@ export default function Footer() {
 
             <h3 className="
               mb-6
-              text-[10px]
+              text-[15px]
               font-semibold
               uppercase
               tracking-[0.2em]
@@ -592,7 +341,7 @@ export default function Footer() {
 
             <h3 className="
               mb-6
-              text-[10px]
+              text-[15px]
               font-semibold
               uppercase
               tracking-[0.2em]
@@ -645,7 +394,7 @@ export default function Footer() {
 
           </div>
 
-        </div>
+     </div>
 
 
         {/* =================================================
@@ -659,6 +408,7 @@ export default function Footer() {
             border-t
             border-white/10
             py-7
+            px-8
             sm:flex-row
             sm:items-center
             sm:justify-between
@@ -669,7 +419,7 @@ export default function Footer() {
             text-[11px]
             text-white/30
           ">
-            © 2026 ELSTRONG . All rights reserved.
+            © 2026. All rights reserved.
           </p>
 
 
@@ -722,8 +472,8 @@ export default function Footer() {
 </div>
 
         </div>
+       
 
-      </div>
     </footer>
   );
 }

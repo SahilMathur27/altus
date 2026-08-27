@@ -26,7 +26,7 @@ export default function HeroSlider() {
         disableOnInteraction: false,
       }}
       pagination={{ clickable: true }}
-      className="w-full"
+      className="w-full pt-16 md:pt-0"
     >
       {slides.map((slide, index) => (
         <SwiperSlide key={index}>

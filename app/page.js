@@ -12,13 +12,14 @@ import Grid from './compoents/Home/Grid'
 import Map from './compoents/Home/Map'
 import ScrollExpand from './compoents/Home/ScrollExpand'
 import Testimonial from './compoents/Testimonial'
+import Popup from './compoents/Home/Popup'
 
 
 
 export default function page() {
   return (
     <>
-      {/* <Navbar /> */}
+      <Navbar/>
       <Hero />
       <About />
       <Grid />
@@ -33,6 +34,7 @@ export default function page() {
       </ScrollExpand>
       <Testimonial/>
       <Map/>
+      <Popup/>
       <Footer />
       {/*  */}
       {/* <Navbar/> 

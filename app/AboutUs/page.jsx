@@ -1,123 +1,111 @@
 "use client";
-import { div } from 'motion/react-client';
-import React, { useState } from 'react'
 
-// export default function Page() {
-//  const [num,setNum]= useState(0)
+import { div } from "motion/react-client";
+import { useState } from "react";
+import Navbar from "../compoents/Home/Navbar";
+import Footer from "../compoents/Home/Footer";
+import { motion } from "framer-motion";
+import Popup from "../compoents/Home/Popup";
 
-//   return (
-//    <>
-//    <h3>Count Number :{num}</h3>
-//    <button onClick={()=>{
-//       setNum(num+1)
-//    }}> Count Now </button>
-//    </>
-//   )
-// }
+export default function Form() {
+ const [openPop, setOpenPop] = useState(false)
+
+  // if (!openPop) return null;
 
 
+  return (
+    <>
+  <Navbar/>
+  {/* Title bar saction  */}
+   <div className="w-full h-[200px] bg-blue-950 flex justify-center items-end pb-6">
+     <h1 className="text-6xl text-white text-center ">About Us </h1>
+   </div>
 
-// export default function Page(){
-//     // Menu ko toggle and band kaise karna hai 
-//  const[open,setOpen]= useState(false)
-// return (
-//     <>
-//     <button className='' onClick={()=>{
-//         setOpen(!open)
-//     }}>Menu</button>
-//     {open && (
-//         <nav>
-//             Home 
-//             About us 
+     <section className="bg-blue-50 w-full py-7 md:py-15">
+         <div className="w-full md:w-7xl flex flex-col md:flex-row mx-auto justify-center gap-7 lg:gap-15 items-center">
+     
+           {/* image saction  */}
+     
+           <div className="w-full md:w-[50%]">
+             <img src="/167088.webp" alt="" 
+             className="h-[350px] w-full rounded-2xl object-cover transition-transform duration-700 hover:scale-105 sm:h-[450px] md:h-[500px] lg:h-[550px]"/>
+            </div>
+               
+               {/* Content Saction  */}
+     
+            <div className="w-full md:w-[50%] p-4">
+             <span className="text-blue-300 font-semibold text-1xl">About Company</span>
+             <h2 className="text-6xl uppercase font-serif">About us </h2>
+            <p className="py-9 leading-7 text-[18px]">We are a professional Digital Marketing Company helping businesses build a strong online presence, reach the right audience, and generate consistent leads. Our customized digital marketing strategies combine creativity, technology, data, and industry insights to deliver measurable results.
+     
+     From improving search engine rankings to increasing brand visibility and customer engagement, we provide complete digital marketing solutions designed to support your business growth.</p>
+            </div>
+         </div>
+       </section>
 
-//         </nav>
-//     )}
-//     </>
-// )
-// }
+   {/* Paralax effact */}
 
 
+        <section className="relative h-[500px] overflow-hidden">
+      
+      {/* Background */}
+      <motion.div
+        className="fixed inset-0 -z-10 bg-cover bg-center"
+        style={{
+          backgroundImage:
+            "url('https://images.unsplash.com/photo-1497366811353-6870744d04b2')",
+        }}
+        initial={{ y: 0 }}
+        whileInView={{ y: 80 }}
+        transition={{ duration: 1.5 }}
+      />
 
-// popup make 
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/50 -z-10" />
 
-export default function Pop(){
 
-    const[openpop, setOpenpop]=useState(false)
-    return(
-        <>
-        <button onClick={()=>{
-            setOpenpop(!openpop)
-        }}>Open Popup</button>
+    </section>
 
-        {openpop && 
-             <form className="w-full max-w-xl space-y-5 border-2 shadow-2xl p-7 mx-auto transition 2s ">
 
-      {/* Name */}
-      <div>
-        <label className="mb-2 block text-sm font-medium">
-          Name
-        </label>
+     {/* Mission Vision */}
+       <div className="w-full bg-amber-50">
+    <h2 className="text-5xl py-4 text-center font-semibold">Company targets</h2>
+    <div className="w-full md:w-7xl flex flex-col md:flex-row mx-auto justify-center gap-6 py-5 ">
 
-        <input
-          type="text"
-          placeholder="Enter your name"
-          className="w-full rounded-md border border-gray-300 px-4 py-3 outline-none focus:border-blue-500"
-        />
+      <div className="w-full md:w-[33%] shadow rounded-2xl bg-white p-3  transition duration-300 hover:-translate-y-2 hover:shadow-xl">
+        <h2 className="text-2xl py-3 font-semibold capitalize">Our Mission </h2>
+        <p>Our mission is to help businesses grow in the digital world through innovative, result-driven, and customized marketing solutions. We combine creativity, technology, data, and strategic thinking to build strong online presence, attract the right audience, generate quality leads, and deliver measurable business growth.
+
+        </p>
       </div>
 
-      {/* Email */}
-      <div>
-        <label className="mb-2 block text-sm font-medium">
-          Email
-        </label>
+      <div className="w-full md:w-[33%] shadow rounded-2xl bg-white p-3  transition duration-300 hover:-translate-y-2 hover:shadow-xl">
+        <h2 className="text-2xl py-3 font-semibold capitalize">Our Vision </h2>
+        <p>Our vision is to become a trusted digital growth partner for businesses worldwide by setting new standards in creativity, technology, and marketing performance. We aim to create meaningful digital experiences that help brands build lasting connections with their customers and achieve sustainable long-term success.
 
-        <input
-          type="email"
-          placeholder="Enter your email"
-          className="w-full rounded-md border border-gray-300 px-4 py-3 outline-none focus:border-blue-500"
-        />
+        </p>
       </div>
 
-      {/* Phone */}
-      <div>
-        <label className="mb-2 block text-sm font-medium">
-          Phone
-        </label>
-
-        <input
-          type="tel"
-          placeholder="Enter your phone number"
-          className="w-full rounded-md border border-gray-300 px-4 py-3 outline-none focus:border-blue-500"
-        />
+      <div className="w-full md:w-[33%] shadow rounded-2xl bg-white p-3  transition duration-300 hover:-translate-y-2 hover:shadow-xl">
+        <h2 className="text-2xl py-3 font-semibold capitalize">Our Value</h2>
+        <p>We believe digital marketing is more than just visibility—it is about creating real business opportunities. From SEO and social media to paid advertising, content marketing, branding, and web solutions, we focus on strategies that turn attention into engagement and engagement into growth.
+        </p>
       </div>
+      
+    </div>
+    </div>
 
-      {/* Message */}
-      <div>
-        <label className="mb-2 block text-sm font-medium">
-          Message
-        </label>
+    {/* Cta Section  */}
 
-        <textarea
-          rows="5"
-          placeholder="Enter your message"
-          className="w-full rounded-md border border-gray-300 px-4 py-3 outline-none focus:border-blue-500"
-        ></textarea>
-      </div>
 
-      {/* Button */}
-      <button
-        type="submit"
-        className="rounded-md bg-blue-600 px-6 py-3 font-medium text-white transition hover:bg-blue-700"
-      >
-        Submit
-      </button>
+    <section className=" w-full text-center h-[200] bg-blue-950 pt-7">
+      <h2 className="text-4xl text-white font-semibold">Contact Now </h2>
+      <p className="text-[16px] text-white py-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint alias cumque facilis sequi, at rerum numquam suscipit est ea quia.</p>
+       <button onClick={()=>setOpenPop(true)} className="bg-white text-[16px] px-7 py-3">Contact Now </button>
+    </section>
 
-    </form>
-        }
-
-        <button onClick={()=>{
-            setOpenpop(false)
-        }}>Close popup</button>
-        </>
-    )
+ <Footer/>
+ <Popup openPop={openPop} setOpenPop={setOpenPop} />
+    </>
+  );
 }
