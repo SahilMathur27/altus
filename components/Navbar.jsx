@@ -16,7 +16,7 @@ export default function Navbar() {
     {
       name: "About Us",
       
-      link: "/AboutUs",
+      link: "/aboutUs",
     },
     {
       name: "Products",
@@ -24,11 +24,11 @@ export default function Navbar() {
     },
      {
       name: "Blogs",
-      link: "/Blogs",
+      link: "/blogs",
     },
     {
       name: "Contact Us",
-      link: "/Contact",
+      link: "/contact",
     },
   ];
 

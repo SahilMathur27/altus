@@ -1,20 +1,16 @@
+import About from '@/components/About'
+import Collections from '@/components/Collections'
+import Footer from '@/components/Footer'
+import ThreeDCardDemo from '@/components/Grid'
+import Hero from '@/components/Hero'
+import Map from '@/components/Map'
+import Navbar from '@/components/Navbar'
+import Popup from '@/components/Popup'
+import ScrollStack from '@/components/ScrollStack'
+import Service from '@/components/Service'
+import Testimonial from '@/components/Testimonial'
+import ScrollExpand from '@/components/ScrollExpand'
 import React from 'react'
-import Navbar from './compoents/Home/Navbar'
-import Featured from './compoents/Home/Featured'
-import About from './compoents/Home/About'
-import Footer from './compoents/Home/Footer'
-import Hero from './compoents/Home/Hero'
-import Collections from './compoents/Home/Collections'
-import Faq from './compoents/Home/Faq'
-import Form from './compoents/Home/Form'
-import Service from './compoents/Home/Service'
-import Grid from './compoents/Home/Grid'
-import Map from './compoents/Home/Map'
-import ScrollExpand from './compoents/Home/ScrollExpand'
-import Testimonial from './compoents/Testimonial'
-import Popup from './compoents/Home/Popup'
-import ScrollStack from './compoents/Home/ScrollStack'
-import ThreeDCardDemo from './compoents/Home/Grid'
 
 
 
@@ -22,8 +18,8 @@ export default function page() {
   return (
     <>
       <Navbar/>
-      <Hero />
-      <About />
+      <Hero/>
+      <About/>
       <Service/>
        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           <ThreeDCardDemo />
@@ -44,17 +40,7 @@ export default function page() {
       <Map/>
       <Popup/>
       <Footer />
-      {/*  */}
-      {/* <Navbar/> 
-      <Service />
-      <Featured />
-<Faq />
 
-      <Form />
-      
-
-      
-*/}
     </>
   )
 }

@@ -1,9 +1,10 @@
 "use client";
 
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
 import { div } from "motion/react-client";
 import { useState } from "react";
-import Navbar from "../compoents/Home/Navbar";
-import Footer from "../compoents/Home/Footer";
+
 
 export default function Form() {
   const [formData, setFormData] = useState({

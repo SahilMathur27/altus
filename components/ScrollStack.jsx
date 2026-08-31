@@ -67,7 +67,7 @@ function ServiceCard({ service, index, progress }) {
   );
 }
 
-export default function ServicesStack() {
+export default function ScrollStack() {
   const container = useRef(null);
 
   const { scrollYProgress } = useScroll({

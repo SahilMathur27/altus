@@ -1,7 +1,8 @@
 import { notFound } from "next/navigation";
-import products from "../../Data/products";
-import Navbar from "@/app/compoents/Home/Navbar";
-import Footer from "@/app/compoents/Home/Footer";
+import products from "@/Data/products";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+
 
 export default async function ProductDetailPage({ params }) {
 

@@ -1,7 +1,9 @@
 import Link from "next/link";
-import blogs from "../Data/Blogsdata";
-import Navbar from "../compoents/Home/Navbar";
-import Footer from "../compoents/Home/Footer";
+import blogs from "@/Data/Blogsdata";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+
+
 
 export default function Blogs() {
   return (

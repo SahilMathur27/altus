@@ -2,7 +2,7 @@
 
 import { motion } from "motion/react";
 
-export default function SpokenGermanSection() {
+export default function Service() {
   const fadeDown = {
     hidden: {
       opacity: 0,

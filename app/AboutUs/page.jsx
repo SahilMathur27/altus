@@ -2,10 +2,10 @@
 
 import { div } from "motion/react-client";
 import { useState } from "react";
-import Navbar from "../compoents/Home/Navbar";
-import Footer from "../compoents/Home/Footer";
 import { motion } from "framer-motion";
-import Popup from "../compoents/Home/Popup";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import Popup from "@/components/Popup";
 
 export default function Form() {
  const [openPop, setOpenPop] = useState(false)

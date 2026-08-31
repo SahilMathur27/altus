@@ -3,10 +3,14 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import products from "@/app/Data/products";
+import products from "@/Data/products";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 export default function Products() {
   return (
+    <>
+    <Navbar/>
     <section className="relative overflow-hidden bg-white py-20 md:py-28">
 
       {/* Background Decoration */}
@@ -122,5 +126,7 @@ export default function Products() {
 
       </div>
     </section>
+    <Footer/>
+    </>
   );
 }
