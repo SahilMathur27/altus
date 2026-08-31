@@ -2,7 +2,6 @@
 
 // import React from "react";
 // import { FiArrowRight, FiCheck, FiZap, FiLayers } from "react-icons/fi";
-// import Button from "./Button";
 // import { Swiper, SwiperSlide } from "swiper/react";
 // import "swiper/css";
 // import { FaMobile } from "react-icons/fa";

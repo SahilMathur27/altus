@@ -15,7 +15,7 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-[#151515] text-white">
+    <footer className="relative overflow-hidden bg-[#151515] text-white p-6">
 
     <div className=" w-7xl flex flex-col md:flex-row mx-auto justify-between gap-10 py-5">
 
