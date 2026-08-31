@@ -23,6 +23,7 @@ export default function page() {
       <Navbar/>
       <Hero />
       <About />
+      <Service/>
       <Grid />
       <Collections />
       <ScrollStack/>
