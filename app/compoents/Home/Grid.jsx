@@ -1,64 +1,64 @@
+"use client";
+
 import React from "react";
-import { Playfair_Display } from "next/font/google";
-import * as motion from "motion/react-client"
-import Button from "./Button";
+import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 
-
- const playfair = Playfair_Display({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
-
-
-
-export default function Grid() {
-
+export default function ThreeDCardDemo() {
+return ( 
+<CardContainer className="inter-var"> 
+  <CardBody className="relative h-auto w-auto rounded-xl border border-black/[0.1] bg-gray-50 p-6 group/card dark:border-white/[0.2] dark:bg-black dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] sm:w-[30rem]">
  
-    return(
-   <>
-   <div className="w-full bg-amber-50">
-    <h2 className="text-7xl py-4 text-center font-semibold">Our Servises</h2>
-    <div className="w-full md:w-7xl flex flex-col md:flex-row mx-auto justify-center gap-6 py-5 ">
-      <div className=" w-full md:w-1/4 shadow rounded-2xl bg-white p-3 transition duration-300 hover:-translate-y-2 hover:shadow-xl">
-        <img src="/64988.jpg" alt="" className="rounded-3xl" />
-        <h2 className="text-2xl py-3 font-semibold capitalize">Website Design</h2>
-        <p>
+  <div className="flex flex-row justify-center mx-au">
 
-        </p>
-      </div>
+  </div>
+    {/* Title */}
+    <CardItem
+      translateZ="50"
+      className="text-xl font-bold text-neutral-600 dark:text-white"
+      >
+      Make things float in air
+       </CardItem>
 
-      <div className="w-full md:w-1/4 shadow rounded-2xl bg-white p-3  transition duration-300 hover:-translate-y-2 hover:shadow-xl">
-        <img src="/64988.jpg" alt="" className="rounded-3xl" />
-        <h2 className="text-2xl py-3 font-semibold capitalize">Social Media Marketing </h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, repellendus?
+       {/* Description */}
+       <CardItem
+      as="p"
+      translateZ="60"
+      className="mt-2 max-w-sm text-sm text-neutral-500 dark:text-neutral-300"
+        >
+      Hover over this card to unleash the power of CSS perspective.
+       </CardItem>
 
-        </p>
-      </div>
+        {/* Image */}
+       <CardItem
+       translateZ="100"
+      rotateX={20}
+      rotateZ={-10}
+      className="mt-4 w-full"
+       >
+      <img
+        src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e"
+        alt="Forest"
+        width={1000}
+        height={1000}
+        className="h-60 w-full rounded-xl object-cover group-hover/card:shadow-xl"
+      />
+    </CardItem>
 
-      <div className="w-full md:w-1/4 shadow rounded-2xl bg-white p-3  transition duration-300 hover:-translate-y-2 hover:shadow-xl">
-        <img src="/64988.jpg" alt="" className="rounded-3xl" />
-        <h2 className="text-2xl py-3 font-semibold capitalize">Google Ads </h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, repellendus?
+    {/* Buttons */}
+    <div className="mt-8 flex items-center">
 
-        </p>
-      </div>
-
-      <div className="w-full md:w-1/4 shadow rounded-2xl bg-white p-3  transition duration-300 hover:-translate-y-2 hover:shadow-xl">
-        <img src="/64988.jpg" alt="" className="rounded-3xl" />
-        <h2 className="text-2xl py-3 font-semibold capitalize">SEO Optimization</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, repellendus?
-
-        </p>
-      </div>
-      
+      <CardItem
+        translateZ={20}
+        translateX={40}
+        as="button"
+        className="rounded-xl bg-black px-4 py-2 text-xs font-bold text-white dark:bg-white dark:text-black"
+      >
+        Sign up
+      </CardItem>
     </div>
-    <div className="text-center">
- <Button text="More Services" href="/Service" />
-    </div>
-   
-    
 
-   </div>
-   </>
-    )
+  </CardBody>
+</CardContainer>
+
+);
 }

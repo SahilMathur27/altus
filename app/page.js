@@ -14,6 +14,7 @@ import ScrollExpand from './compoents/Home/ScrollExpand'
 import Testimonial from './compoents/Testimonial'
 import Popup from './compoents/Home/Popup'
 import ScrollStack from './compoents/Home/ScrollStack'
+import ThreeDCardDemo from './compoents/Home/Grid'
 
 
 
@@ -24,7 +25,11 @@ export default function page() {
       <Hero />
       <About />
       <Service/>
-      <Grid />
+       <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <ThreeDCardDemo />
+          <ThreeDCardDemo />
+          <ThreeDCardDemo />
+        </div>
       <Collections />
       <ScrollStack/>
       
